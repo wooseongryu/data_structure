@@ -7,12 +7,29 @@ class Node:
         self.left_child = None
         self.right_child = None
 
+
 def traverse_inorder(node):
     """in-order 순회 함수"""
     if node is not None:
         traverse_inorder(node.left_child)
         print(node.data)
         traverse_inorder(node.right_child)
+
+
+def traverse_preorder(node):
+    """post-order 순회 함수"""
+    if node is not None:
+        print(node.data)  # 데이터 출력
+        traverse_preorder(node.left_child)  # 재귀적으로 왼쪽 부분 트리 순회
+        traverse_preorder(node.right_child)  # 재귀적으로 오른쪽 부분 트리 순회
+
+
+def traverse_postorder(node):
+    """post-order 순회 함수"""
+    if node is not None:
+        traverse_postorder(node.left_child)  # 재귀적으로 왼쪽 부분 트리 순회
+        traverse_postorder(node.right_child)  # 재귀적으로 오른쪽 부분 트리 순회
+        print(node.data)  # 데이터 출력
 
 
 # 여러 노드 인스턴스 생성
