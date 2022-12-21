@@ -62,3 +62,7 @@ root_node = node_F
 
 # 만들어 놓은 트리를 in-order로 순회한다
 traverse_inorder(root_node)
+print("---------------")
+traverse_preorder(root_node)
+print('---------------')
+traverse_postorder(root_node)

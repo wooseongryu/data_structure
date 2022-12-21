@@ -19,7 +19,7 @@ def heapify(tree, index, tree_size):
     if 0 < left_child_index < tree_size and tree[largest] < tree[left_child_index]:
         largest = left_child_index
 
-    # 오른쪽 자시기 노드가 존재하는지 확인하고 부모 노드의 값보다 큰지 확인
+    # 오른쪽 자식 노드가 존재하는지 확인하고 부모 노드의 값보다 큰지 확인
     elif 0 < right_child_index < tree_size and tree[largest] < tree[right_child_index]:
         largest = right_child_index
 
