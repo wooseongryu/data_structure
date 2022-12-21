@@ -25,8 +25,10 @@ class BinarySearchTree:
     @staticmethod
     def find_min(node):
         """(부분)이진 탐색 트리의 가장 작은 노드 리턴"""
+        # 도우미 변수, 파라미터 node로 초기화
         tmp = node
 
+        # tmp가 node를 뿌리로 갖는 부분 트리에서 가장 작은 노드일 때 까지 왼쪽 자식 노드로 간다
         while tmp.left_child:
             tmp = tmp.left_child
 

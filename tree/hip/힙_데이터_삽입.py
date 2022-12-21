@@ -9,9 +9,10 @@ def reverse_heapify(tree, index):
     """삽입된 노드를 힙 속성을 지키는 위치로 이동시키는 함수"""
     parent_index = index // 2  # 삽입된 노드의 부모 노드의 인덱스 계산
 
+    # 부모 노드가 존재하고, 부모 노드의 값이 삽입된 노드의 값보다 작을 때
     if 0 < parent_index < len(tree) and tree[parent_index] < tree[index]:
         swap(tree, parent_index, index)
-        reverse_heapify(tree, parent_index)
+        reverse_heapify(tree, parent_index)  # 삽입된 노드를 대상으로 다시 reverse_heapify 호출
 
 
 class PriorityQueue:
@@ -21,8 +22,8 @@ class PriorityQueue:
 
     def insert(self, data):
         """삽입 메소드"""
-        self.heap.append(data)
-        reverse_heapify(self.heap, len(self.heap) - 1)
+        self.heap.append(data)  # 힙의 마지막에 데이터 추가
+        reverse_heapify(self.heap, len(self.heap) - 1)  # 삽입된 노드의 위치를 재배치
 
     def __str__(self):
         return str(self.heap)

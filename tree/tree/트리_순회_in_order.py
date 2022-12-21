@@ -17,7 +17,7 @@ def traverse_inorder(node):
 
 
 def traverse_preorder(node):
-    """post-order 순회 함수"""
+    """pre-order 순회 함수"""
     if node is not None:
         print(node.data)  # 데이터 출력
         traverse_preorder(node.left_child)  # 재귀적으로 왼쪽 부분 트리 순회

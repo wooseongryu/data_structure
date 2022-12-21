@@ -49,11 +49,11 @@ class PriorityQueue:
 
     def extract_max(self):
         """최우선순위 데이터 추출 메소드"""
-        swap(self.heap, 1, len(self.heap) - 1)
-        tmp = self.heap.pop()
-        heapify(self.heap, 1, len(self.heap))
+        swap(self.heap, 1, len(self.heap) - 1)  # root노드와 마지막 노드 위치 교환
+        tmp = self.heap.pop()  # 힙에서 마지막 노드 추출해서 변수에 저장
+        heapify(self.heap, 1, len(self.heap))  # 새로운 root노드를 대상으로 heapify를 호출해서 힙 속성 유지
 
-        return tmp
+        return tmp  # 최우선순위 데이터 리턴
 
     def __str__(self):
         return str(self.heap)

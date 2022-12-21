@@ -24,16 +24,22 @@ class BinarySearchTree:
 
     def search(self, data):
         """이진 탐색 트리 탐색 메소드, 찾는 데이터를 갖는 노드가 없으면 None을 리턴한다"""
+        # 탐색용 변수, root 노드로 초기화
         tmp = self.root
 
+        # 원하는 데이터를 갖는 노드를 찾을 때까지 돈다
         while tmp is not None:
+            # 원하는 데이터가 노드의 데이터보다 크면 오른쪽 자식 노드로 간다
             if data > tmp.data:
                 tmp = tmp.right_child
+            # 원하는 데이터가 노드의 데이터보다 작으면 왼쪽 자식 노드로 간다
             elif data < tmp.data:
                 tmp = tmp.left_child
+            # 원하는 데이터를 갖는 노드를 찾으면 리턴한다
             else:
                 return tmp
 
+        # 원하는 데이터가 트리에 없으면 None 리턴
         return None
 
     def insert(self, data):
